@@ -1,0 +1,34 @@
+{
+  "name": "playwright-mts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --project=\"System Chrome\"",
+    "test:ui": "npx playwright test --ui",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --project=\"System Chrome\" --debug",
+    "test:slowmo": "npx playwright test --headed --slow-mo 500",
+    "test:parallel": "npx playwright test --workers=4",
+    "test:file": "npx playwright test tests/example.spec.ts",
+    "test:grep": "npx playwright test -g '@smoke'",
+    "test:chromium": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:webkit": "npx playwright test --project=webkit",
+    "report": "npx playwright show-report",
+    "report:allure": "allure generate ./allure-results --clean && allure open",
+    "codegen": "npx playwright codegen --channel=chrome --output=tests/example.spec.js",
+    "codegen:chrome": "npx playwright codegen --browser=chromium",
+    "codegen:firefox": "npx playwright codegen --browser=firefox",
+    "install:browsers": "npx playwright install --with-deps",
+    "clean": "rimraf test-results/ playwright-report/ allure-results/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^24.3.0",
+    "allure-playwright": "^3.4.1"
+  }
+}
